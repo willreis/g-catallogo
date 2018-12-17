@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <!-- meta -->
@@ -17,9 +17,10 @@
     <!-- theme css -->
     <link rel="stylesheet" href="css/theme.min.css">
     <link rel="stylesheet" href="css/custom.css">
+    <script src="js/get-date.js"></script>
 </head>
 
-<body class="fixed-header">
+<body class="fixed-header" onload="atualizarDataHora();">
     <!-- header -->
     <header id="header">
         <div class="container">
@@ -33,11 +34,8 @@
                                 <li>
                                     <a href="index.html">Home</a>
                                 </li>
-                                <li class="mega-menu mega-games">
-                                    <a href="games.html">Sobre Nós</a>
-                                </li>
                                 <li>
-                                    <a href="blog.html">Contato</a>
+                                    <a href="contato.html">Contato</a>
                                 </li>
                                 <li>
                                     <a href="#">Blog</a>
@@ -48,7 +46,7 @@
                     <div class="nav navbar-right">
                         <ul>
                             <li class="hidden-xs-down"><a href="login.html">Login</a></li>
-                            <li class="hidden-xs-down"><a href="register.html">Cadastrar</a></li>
+                            <li class="hidden-xs-down"><a href="registro.html">Cadastrar</a></li>
                             <li><a data-toggle="search"><i class="fa fa-search"></i></a></li>
                         </ul>
                     </div>
@@ -106,7 +104,7 @@
         <div class="container">
             <div class="heading">
                 <i class="fa fa-steam"></i>
-                <h2>Os Mais Jogados</h2>
+                <h2>Os Mais Jogados de <span id="datahora"></span></h2>
                 <p>
                     Confira abaixo a lista com os jogos mais jogados do site<br>
                     Será que os seus estão aqui?
@@ -218,7 +216,7 @@
         <div class="container">
             <div class="heading">
                 <i class="fa fa-star"></i>
-                <h2>Jogos mais Zerados</h2>
+                <h2>Jogos mais Zerados </h2>
                 <p>Aqui é a lista de jogos zerados.<br>
                 Dá uma olhada, ja zerou algum dessa lista?
                 </p>
@@ -303,7 +301,7 @@
     <section style="padding-bottom: 0;">
         <div class="heading">
             <i class="fa fa-star"></i>
-            <h2>Jogo do Mês</h2>
+            <h2>Jogo do Mês de <span id="mes_vigente" onload="mesvigente()"></span></h2>
             <p>Esse aqui é o jogo mais jogado do site no mês.</p>
         </div>
     </section>
@@ -380,7 +378,7 @@
                     <a href="https://www.twitch.tv/" target="_blank" data-toggle="tooltip" title="twitch"><i class="fa fa-twitch"></i></a>
                     <a href="https://www.youtube.com/user/1YAKUZI" target="_blank" data-toggle="tooltip" title="youtube"><i class="fa fa-youtube"></i></a>
                 </div>
-                <p>Copyright &copy; 2017 <a href="https://themeforest.net/item/gameforest-responsive-gaming-html-theme/5007730" target="_blank">Gameforest</a>. All rights reserved.</p>
+                <p>Copyright &copy; <span id="anoFooter" onload="mostrarAno()"></span></h2> <a href="https://themeforest.net/item/gameforest-responsive-gaming-html-theme/5007730" target="_blank">Gameforest</a>. All rights reserved.</p>
             </div>
         </div>
     </footer>

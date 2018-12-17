@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="plugins/animate/animate.min.css">
     <!-- plugins css -->
     <link rel="stylesheet" href="plugins/select2/css/select2.min.css">
+    <link href="plugins/owl-carousel/css/owl.carousel.min.css" rel="stylesheet">
     <!-- theme css -->
     <link rel="stylesheet" href="css/theme.min.css">
     <link rel="stylesheet" href="css/custom.css">
@@ -33,11 +34,8 @@
                                 <li>
                                     <a href="index.html">Home</a>
                                 </li>
-                                <li class="mega-menu mega-games">
-                                    <a href="games.html">Sobre Nós</a>
-                                </li>
                                 <li>
-                                    <a href="blog.html">Contato</a>
+                                    <a href="contato.html">Contato</a>
                                 </li>
                                 <li>
                                     <a href="#">Blog</a>
@@ -48,7 +46,7 @@
                     <div class="nav navbar-right">
                         <ul>
                             <li class="hidden-xs-down"><a href="login.html">Login</a></li>
-                            <li class="hidden-xs-down"><a href="register.html">Cadastrar</a></li>
+                            <li class="hidden-xs-down"><a href="registro.html">Cadastrar</a></li>
                             <li><a data-toggle="search"><i class="fa fa-search"></i></a></li>
                         </ul>
                     </div>
@@ -67,12 +65,17 @@
     <!-- /header -->
 
     <!-- main -->
-    <section class="breadcrumbs">
-        <div class="container">
-            <ol class="breadcrumb">
-                <li><a href="/">Home</a></li>
-                <li class="active">Contato</li>
-            </ol>
+    <section class="bg-inverse p-y-0">
+        <div class="owl-carousel owl-slide full-height">
+            <div class="carousel-item" style="background-image: url('img/carousel/carousel-1.jpg');">
+                <div class="carousel-overlay"></div>
+                <div class="carousel-caption">
+                    <div>
+                        <h3 class="carousel-title">Contato</h3>
+                        <p>Tem alguma duvida, sugestão ou parceria (rsrs), entre em contato conosco.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -81,7 +84,7 @@
             <div class="heading">
                 <i class="fa fa-envelope-open-o"></i>
                 <h2>Entre em contato conosco</h2>
-                <p>Tem alguma dúvida, sugestão, fale conosco através do formulário.</p>
+                <p>Preencha o formulário, em breve responderemos.</p>
             </div>
         </div>
     </section>
@@ -91,7 +94,7 @@
             <div class="row">
                 <div class="col-lg-7 mx-auto">
                     <form method="post">
-                        <div class="alert alert-success alert-dismissible" role="alert">
+                        <div class="alert alert-success alert-dismissible" role="alert" style="display:none">
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -199,28 +202,45 @@
 
     <!-- plugins js -->
     <script src="plugins/select2/js/select2.min.js"></script>
-    <script type="text/javascript">
-        // select2
-        $('.select2').select2();
+    <script src="plugins/lightbox/lightbox.js"></script>
+    <script src="plugins/owl-carousel/js/owl.carousel.min.js"></script>
+    <script>
+        (function($) {
+            "use strict";
 
-        function initMap() {
-            var uluru = {
-                lat: -12.043333,
-                lng: -77.028333
-            };
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 15,
-                center: uluru,
-                scrollwheel: false,
+            // Full Width Carousel
+            $('.owl-slide').owlCarousel({
+                nav: true,
+                loop: true,
+                autoplay: true,
+                items: 1
             });
-            var marker = new google.maps.Marker({
-                position: uluru,
-                map: map
+
+            // Recent Reviews
+            $('.owl-list').owlCarousel({
+                margin: 25,
+                nav: true,
+                dots: false,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    500: {
+                        items: 2
+                    },
+                    701: {
+                        items: 3
+                    },
+                    1000: {
+                        items: 4
+                    }
+                }
             });
-        }
+
+            // lightbox
+            $('[data-lightbox]').lightbox();
+        })(jQuery);
     </script>
-    <script src="https://maps.google.com/maps/api/js?key=AIzaSyAUenkGu4SV4tMbrhcLbnqI8LWOE93v3Jc&callback=initMap"></script>
-
     <!-- theme js -->
     <script src="js/theme.min.js"></script>
 </body>
